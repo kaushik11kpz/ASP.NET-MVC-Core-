@@ -1,0 +1,24 @@
+What is importance of ViewData/How to pass data from Controller to View?
+-ViewData["vd"]="Hello";
+-ViewData is used to pass data from Action to View.
+-It is set in Action, Viewed in View than after execution cleaned by the garbage collection.
+
+Can ViewData persist across Action in the same request?
+-No, in case of RedirectToAction("Index1"), the ViewData do not persist.
+-Scope is only from Controller to View.
+-Even in same request, if we try to go from one action to another, ViewData will not persist.
+
+ViewData vs ViewBag
+-ViewBag.vd;
+-ViewData is dictionary type.
+-ViewBag is dynamic type.
+-ViewBag is a syntactic sugar over ViewData.
+-Internally data is stored in ViewData and is accessed by ViewBag.
+-Manipulation of either results in manipulation of both.
+-ViewBag internally uses dynamic variable object. These object are evaluated dynamic during runtime.
+-ViewBag return nulls of no object is present.
+
+viewModels
+-It is not a best practice to either use ViewData or ViewBag for data transfer.
+-We should use strongly typed views called viewModels.
+-viewModel is an object that represent the data which View wants.

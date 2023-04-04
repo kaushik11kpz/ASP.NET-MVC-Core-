@@ -1,0 +1,48 @@
+ASP.NET Web Form -> ASP.NET MVC 5-> ASP.NET MVC Core -> .NET 5.0(unified)
+ 2003                 2009           2017
+
+ASP.NET MVC Core
+-It is an open source cross platform framework to develop web application.
+-It is created by Microsoft.
+
+ASP.NET MVC Core vs ASP.NET MVC 5 vs WebForms
+-Cross-platform - ASP.NET MVC Core is cross platform while other two work only on Windows.
+-Performance- MVC Core has the best performance as files and dlls sizes are very less.
+-Simplification - MVC Core has built in features such as DI, which in not present in other two.
+-Cloud-MVC Core has complete support for cloud while MVC has partial support and WebForm do not support cloud.
+-HTML Control- MVC Core and MVC has good control due to Razor view.
+
+MVC Architecture
+-MVC is an architecture pattern wherein we divide the project in 3 layers.
+1. Controller - Controller connects the model and the view, binds model and view.
+2. View - Take care of look and feel, UI, color positioning.
+3. Model - It has business logic and domain classes.
+
+wwwroot folder
+-We store static content like HTML,CSS,JS,images files.
+
+appsettings.json
+-It helps us to store configuration of the project, ex- connection string, version num, etc.
+-It is in JSON format.
+-To read configuration from appsettings.json we need to use IConfiguration interface object which is injected by MVC Core using Dependency Injection framework.
+-IConfiguration interface belongs to Microsoft.Extensions.Configuration namespace.
+-Wherever we need to read the appsettings.json configuration in Controller's constructor, we need to provide this IConfiguration in the constructor
+as parameter.
+-This IConfiguration is then dependency injected means a readymade object is injected by MVC core in that constructor.
+
+Dependency Injection
+-DI is a practice of providing dependent objects for a class from outside rather than instantiating the object inside class. 
+-Benefit of DI - Loosely coupled(decoupled) system.
+-By delegating object creation outside the caller we have decoupled the system.
+-Change at one place and changes are reflected across the application seamlessly.
+-To implement DI, we need to provide DI object in startup.cs file in ConfigureServices method using scoped,singleton and transient.
+
+Middleware
+-It helps to execute preprocessing logic in MVC architecture.
+-Middleware comes in the picture in the request pipeline before the request hits controller.
+-Implementation of middleware in MVC Core in 3 steps
+1. Add the Middleware class using the template
+2. Write preprocessing custom logic in invoke method of Middleware class.
+3. Plug the Middleware in the request pipeline inside Configure method of startup.cs class using app.UseMiddleware<>.
+
+

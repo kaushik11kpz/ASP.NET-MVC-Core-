@@ -1,0 +1,41 @@
+WebAPI
+-WebAPI is MVC Controller which helps us to expose data and services over HTTP.
+-WebAPI controller delivers data and services easily by using HTTP REST services.
+-Thus these data and services exposed by WebAPI can be consumed everywhere.
+-WebAPI helps to create Restful Service.
+
+Explain REST and architectural contrainsts of REST
+-REST-Representational State Transfer.
+-REST is an architectural style/principle where client and server talk in terms of representations and states.
+-Thus, client and server are decoupled.
+-Representation such as JSON/XML/CSV and state is a feature of data.
+-This state and representation of data can be implemented using HTTP and HTTP can be implemented using Web API.
+-Priciple of Rest are
+1. Client Server.
+2. Statelessness.
+3. Unique URI.
+4. Manipluation happens through representation.
+
+-We cannot expose our data, services through TCP/IP.
+-As TCP/IP is stateful and statelessness is requirement of Rest API.
+
+How WebAPI is different from MVC Controller
+-MVC Controller can return a Razore views but WebAPI cannot.
+-Content Negotiations-depending on the client data sent in header Web API reacts as it is following HTTP protocol.
+-WebAPI inherits from ControllerBase while normal MVC Controller inherits from Controller.
+
+WCF vs WebAPI
+-XML is mandatory in WCF.
+-Web API can use JSON,XML,etc.
+
+How to return status codes and data through WebAPI
+-return StatusCode(StatusCodes.Status200ok,"Test"); or return OK("Test")
+ with return type IActionResult
+
+500-Internal server error
+
+How current JS frameworks works with Web API
+-Web API interacts in Client-Server manner with JS frameworks.
+
+
+

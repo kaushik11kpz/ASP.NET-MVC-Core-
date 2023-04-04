@@ -1,0 +1,63 @@
+Startup.cs
+-It helps us to configure our DI object using ConfigureServices method.(services.Add<>)
+-It helps us to configure our Middleware using using Configure method.(app.Use<>)
+
+What are various ways of doing DI in MVC Core
+3 ways
+1.AddScoped
+2.AddSingleton
+3.AddTransient
+-AddScoped instantiate object per request/instantiate once per request made to server.
+-For every request a single instance is created and the same instance is injected again and again for every DI object in the constructor.
+-AddTransient creates fresh instances for every Dependency Injected object(one which is present in constructor parameter).
+-AddSingletin create only one big instance(global object) for the whole application's Dependency Object.
+-Every new request is also alloted the same instance for Dependency Injected Object in AddSingleton.
+
+Razor
+-It is a view engine.
+-It is a markup syntax which helps us to write HTML and server side code using C# or VB.NET together.
+-C# is done inside @{}.
+
+How to pass Model (object) to View
+-return View("ViewName","ObjectName")
+
+Strongly Typed Views
+-Strongly Typed Views are Razor view where we get Model intellisense.
+-Intellisense inside Razor view makes it Strongly Typed Razor View.
+-At the top of the View, you have to use @model "Type of the Model"(List<CustomerApps.Models.Customer>).
+
+
+viewModels
+-A viewModel is a wrapper class which is wrapped around multiple models and it represents the data that View needs.
+-It is the data that View needs.
+-Displaying two models in a single View is difficult as You cannot use two models at the same time inside a Razor View.
+-Thus we create a viewModel, which has both model objects. 
+
+Kestrel Web Server
+-It is a default, free, open source, lightweight web server which ships with ASP.NET MVC Core.
+-Kestrel listens to local host 5000 port.
+-Any request which is sent to MVC core application first go to Web Server.
+-Web Server loads Controller, Views and Models and sends a response back to the browser.
+-Kestrel is specific to MVC, it does not replace IIS.
+-In production, Reverse Proxy architecture is used and IIS and Kestrel are used together.
+-In Reverse proxy architecture, Kestrel act as intermediate server.
+-In Reverse proxy-> User-----> IIS -----> Kestrel------>MVC.
+                                   <------        <-------
+-We cannot run MVC directly with IIS, we need Kestrel to deal with MVC.
+
+Cookies
+-Cookies are text file with small pieces of data which is stored in the end user computer regarding the websites.
+Ex-liking,surfing,state management.
+
+Session Management
+-Session Management techniques helps to maintain states between the HTTP requests.
+-HTTP is stateless.
+-Every user request is treated as new user as MVC doesnot remember the previous user, so it treats every request as new user's request.
+-State is not maintained between the request.
+-If we want to maintain the state between these requests like remember username,previous response etc, then we need to implement Session Management.
+
+Various ways of doing Session Management in ASP.NET MVC Core
+3 ways
+1. Session variable
+2. ViewData/ViewBag
+3. Tempdata
